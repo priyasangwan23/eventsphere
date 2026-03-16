@@ -12,12 +12,16 @@ import EditEvent from './pages/EditEvent'
 import MyEvents from './pages/MyEvents'
 import MyRegistrations from './pages/MyRegistrations'
 
+import HomePage from './pages/HomePage';
+import SavedEvents from './pages/SavedEvents';
+
 function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
         <Routes>
           {/* Public Routes */}
+          <Route path="/" element={<HomePage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/events" element={<EventsList />} />
@@ -64,9 +68,16 @@ function App() {
               </ProtectedRoute>
             } 
           />
+          <Route 
+            path="/saved-events" 
+            element={
+              <ProtectedRoute>
+                <SavedEvents />
+              </ProtectedRoute>
+            } 
+          />
           
           {/* Default Route */}
-          <Route path="/" element={<Navigate to="/events" replace />} />
           <Route path="*" element={<Navigate to="/login" replace />} />
         </Routes>
       </BrowserRouter>
