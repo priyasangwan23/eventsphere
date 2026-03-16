@@ -34,6 +34,9 @@ const Navbar = () => {
                     <Link to="/my-registrations" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-sans">
                       My Registrations
                     </Link>
+                    <Link to="/saved-events" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-sans">
+                      Saved Events
+                    </Link>
                     <Link to="/events/create" className="text-gray-300 hover:text-white px-3 py-2 rounded-md text-sm font-medium font-sans">
                       Create Event
                     </Link>
