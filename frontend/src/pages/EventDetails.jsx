@@ -1,4 +1,7 @@
 import RegisterButton from '../components/RegisterButton';
+import BookmarkButton from '../components/BookmarkButton';
+import CountdownTimer from '../components/CountdownTimer';
+import userService from '../services/userService';
 
 const EventDetails = () => {
   const { id } = useParams();
@@ -10,12 +13,15 @@ const EventDetails = () => {
   const [error, setError] = useState(null);
   const [registering, setRegistering] = useState(false);
   const [deleting, setDeleting] = useState(false);
+  const [isSaved, setIsSaved] = useState(false);
+  const [saving, setSaving] = useState(false);
 
   const fetchEvent = async () => {
     try {
       setLoading(true);
       const res = await eventService.getEventById(id);
       setEvent(res.data);
+      setIsSaved(user?.savedEvents?.includes(id));
       setError(null);
     } catch (err) {
       setError(err.response?.data?.message || 'Error fetching event details');
@@ -26,7 +32,26 @@ const EventDetails = () => {
 
   useEffect(() => {
     fetchEvent();
-  }, [id]);
+  }, [id, user]);
+
+  const handleToggleSave = async () => {
+    if (!user) return alert('Please login to save events');
+    
+    try {
+      setSaving(true);
+      if (isSaved) {
+        await userService.unsaveEvent(id, token);
+        setIsSaved(false);
+      } else {
+        await userService.saveEvent(id, token);
+        setIsSaved(true);
+      }
+    } catch (error) {
+      console.error('Error toggling save:', error);
+    } finally {
+      setSaving(false);
+    }
+  };
 
   const handleRegister = async () => {
     if (!user) {
@@ -115,8 +140,15 @@ const EventDetails = () => {
               alt={event.title}
               className="w-full h-full object-cover"
             />
-            <div className="absolute top-6 right-6 bg-blue-600 text-white font-bold px-4 py-2 rounded-full uppercase text-sm tracking-wider shadow-lg">
-              {event.category}
+            <div className="absolute top-6 right-6 flex items-center gap-4">
+              <div className="bg-blue-600 text-white font-bold px-4 py-2 rounded-full uppercase text-sm tracking-wider shadow-lg">
+                {event.category}
+              </div>
+              <BookmarkButton 
+                isSaved={isSaved} 
+                onToggle={handleToggleSave} 
+                loading={saving} 
+              />
             </div>
           </div>
 
@@ -142,6 +174,11 @@ const EventDetails = () => {
                     <span className="mr-3 text-blue-500">📍</span>
                     {event.location}
                   </div>
+                </div>
+
+                <div className="mt-8">
+                  <p className="text-xs uppercase tracking-widest text-gray-500 font-bold mb-4 font-sans">Starting in</p>
+                  <CountdownTimer targetDate={event.date} />
                 </div>
               </div>
 
