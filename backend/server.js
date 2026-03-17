@@ -1,5 +1,4 @@
 const express = require('express');
-const path = require('path');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const connectDB = require('./config/db');
@@ -21,24 +20,23 @@ app.use('/api/auth', require('./routes/auth'));
 app.use('/api/events', require('./routes/events'));
 app.use('/api/users', require('./routes/users'));
 
-// Serve static assets in production
-if (process.env.NODE_ENV === 'production') {
-  // Set static folder
-  app.use(express.static(path.join(__dirname, '../frontend/dist')));
-
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, '../frontend', 'dist', 'index.html'));
-  });
-} else {
-  // Health check
-  app.get('/', (req, res) => {
-    res.json({ message: 'EventSphere API is running' });
-  });
-}
+// Root route (for testing API)
+app.get('/', (req, res) => {
+  res.json({ message: 'EventSphere API is running 🚀' });
+});
 
 // Error Handler
 const errorHandler = require('./middleware/errorHandler');
 app.use(errorHandler);
+
+// Handle crashes (optional but recommended)
+process.on("uncaughtException", (err) => {
+  console.error("Uncaught Exception:", err);
+});
+
+process.on("unhandledRejection", (err) => {
+  console.error("Unhandled Rejection:", err);
+});
 
 const PORT = process.env.PORT || 5000;
 
