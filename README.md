@@ -1,172 +1,154 @@
-🌍 EventSphere
+# 🌍 EventSphere
 
-🚀 A Full Stack Event Discovery & Networking Platform
+> 🚀 A Full Stack Event Discovery & Networking Platform
 
-EventSphere is a modern, scalable platform that enables users to discover, create, and participate in global events like hackathons, workshops, and conferences — while also connecting with like-minded people.
+EventSphere is a modern, scalable platform that enables users to **discover, create, and participate in global events** like hackathons, workshops, and conferences — while also connecting with like-minded people.
 
-✨ Highlights
+---
 
-🌐 Discover events worldwide
+## ✨ Highlights
 
-🤝 Network with attendees
+- 🌐 Discover events worldwide  
+- 🤝 Network with attendees  
+- 📊 Personalized dashboards  
+- ⚡ Smart recommendations  
+- 🎯 Advanced filtering & search  
 
-📊 Personalized dashboards
+---
 
-⚡ Smart recommendations
+## 🚀 Features
 
-🎯 Advanced filtering & search
+### 🔐 Authentication System
+- User Signup & Login  
+- Password validation  
+- Protected routes  
+- LocalStorage-based authentication  
 
-🚀 Features
-🔐 Authentication System
+---
 
-User Signup & Login
-
-Password validation
-
-Protected routes
-
-LocalStorage-based authentication
-
-📅 Event Management (CRUD)
-
+### 📅 Event Management (CRUD)
 Organizers can:
+- ➕ Create events  
+- 📖 View events  
+- ✏️ Update event details  
+- ❌ Delete events  
 
-➕ Create events
+---
 
-📖 View events
+### 🔍 Smart Event Discovery
+- 🔎 Search functionality  
+- 🏷️ Category filtering  
+- 📍 Location filtering  
+- 📈 Sort by trending / newest  
 
-✏️ Update event details
+---
 
-❌ Delete events
-
-🔍 Smart Event Discovery
-
-🔎 Search functionality
-
-🏷️ Category filtering
-
-📍 Location filtering
-
-📈 Sort by trending / newest
-
-📊 Personalized Dashboard
-
+### 📊 Personalized Dashboard
 Each user gets:
+- 🎟️ Registered events  
+- ⭐ Recommended events  
+- 🔖 Bookmarked events  
+- ⏳ Upcoming events  
 
-🎟️ Registered events
+---
 
-⭐ Recommended events
+### 🌐 Attendee Networking
+- View event participants  
+- Connect with people sharing similar interests  
 
-🔖 Bookmarked events
+---
 
-⏳ Upcoming events
-
-🌐 Attendee Networking
-
-View event participants
-
-Connect with people sharing similar interests
-
-⭐ Event Bookmarking
-
+### ⭐ Event Bookmarking
 Save events for later viewing:
+- AI Hackathon  
+- React Bootcamp  
+- Startup Summit  
 
-AI Hackathon
+---
 
-React Bootcamp
+### 🔥 Trending Events
+- Based on registrations  
+- Based on user activity  
 
-Startup Summit
+---
 
-🔥 Trending Events
+### ⏳ Event Countdown Timer
+- Live countdown for every event  
 
-Based on registrations
+---
 
-Based on user activity
+### 🌙 Dark / Light Mode
+- Toggle between themes  
+- Preference stored locally  
 
-⏳ Event Countdown Timer
+---
 
-Live countdown for every event
+### 🔎 Optimized Search (Debouncing)
+- Reduces unnecessary API calls  
+- Improves performance  
 
-🌙 Dark / Light Mode
+---
 
-Toggle between themes
+### 📄 Pagination
+- Efficient handling of large datasets  
 
-Preference stored locally
+---
 
-🔎 Optimized Search (Debouncing)
-
-Reduces unnecessary API calls
-
-Improves performance
-
-📄 Pagination
-
-Efficient handling of large datasets
-
-📱 Responsive UI
-
+### 📱 Responsive UI
 Works seamlessly across:
+- 💻 Desktop  
+- 📱 Mobile  
+- 📲 Tablet  
 
-💻 Desktop
+---
 
-📱 Mobile
+## 🛠 Tech Stack
 
-📲 Tablet
+### Frontend
+- React.js  
+- Tailwind CSS  
+- React Router  
+- Context API  
+- Axios  
 
-🛠 Tech Stack
-Frontend
+### Backend
+- Node.js  
+- Express.js  
 
-React.js
+### Database
+- MongoDB  
+- Mongoose  
 
-Tailwind CSS
+---
 
-React Router
+## 🌟 Future Enhancements
 
-Context API
+- 🤖 AI-based event recommendations  
+- 💬 Real-time chat between attendees  
+- 📅 Calendar integrations  
+- 🌍 Multi-language support  
 
-Axios
+---
 
-Backend
+## 📜 License
 
-Node.js
+This project was developed for a **Full Stack Hackathon** and is intended for **educational and demonstration purposes**.
 
-Express.js
+---
 
-Database
+## 👩‍💻 Author
 
-MongoDB
+**Priya Sangwan**  
+💼 Full Stack Developer  
 
-Mongoose
+- GitHub: https://github.com/priyasangwan23  
+- LinkedIn: https://www.linkedin.com/in/priya-sangwan-a38037395/  
 
-🌟 Future Enhancements
+---
 
-🤖 AI-based event recommendations
-
-💬 Real-time chat between attendees
-
-📅 Calendar integrations
-
-🌍 Multi-language support
-
-📜 License
-
-This project was developed for a Full Stack Hackathon and is intended for educational and demonstration purposes.
-
-👩‍💻 Author
-
-Priya Sangwan
-💼 Full Stack Developer
-
-🔗 GitHub: https://github.com/priyasangwan23
-
-🔗 LinkedIn: https://www.linkedin.com/in/priya-sangwan-a38037395/
-
-⭐ Support
+## ⭐ Support
 
 If you like this project:
-
-⭐ Star the repo
-
-🍴 Fork it
-
-🚀 Contribute
+- ⭐ Star the repo  
+- 🍴 Fork it  
+- 🚀 Contribute  
